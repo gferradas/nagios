@@ -8,7 +8,7 @@ Esta seccion repasa como instalar nagios en el host que queremos monitorear
 # Pasos a seguir para instalar y configurar npre en host remoto
 
 Copiar con winscp los ficheros comprimidos nagios-plugins-2.3.3.tar.gz y nrpe-4.0.3.tar.gz al directio /tmp
-<mark>(si esto no se hace el script fallara)</mark>
+==(si esto no se hace el script fallara)==
 
 **Estos ficheros se encuentran en la carpeta plugins**
 
@@ -44,7 +44,7 @@ Debemos editar el /usr/local/nagios/etc/nrpe.cfg
 
  **use su editor de confianza**
 
-Buscar la linea de abajo y asegurarse que se vea asi, <mark>(aca estamos permitiendo que el servidor nagios vea el host remoto)</mark>
+Buscar la linea de abajo y asegurarse que se vea asi, ==(aca estamos permitiendo que el servidor nagios vea el host remoto)==
 
 `allowed_hosts=127.0.0.1,172.18.101.8`
 
@@ -69,7 +69,7 @@ command[check_netstat]=/usr/local/nagios/libexec/check_netstat.pl -p $ARG1$ $ARG
 ## Paso 1 
 **Confirmamos que podamos ver el cliente nrpe**
 `/usr/local/nagios/libexec/check_nrpe -H (colocar la ip del servidor remoto)`
-<mark>La respuesta debe ser esta</mark>
+==La respuesta debe ser esta==
 `NRPE v4.0.3`
 
  
@@ -82,7 +82,7 @@ En este archivo se debe editar el nombre y la direccion ip
 
 Para cambiar todo el nombre de una vez en el fichero con vim escribimos esto
 `:%s/template.cfg/(nombredelhost).cfg /g`
-<mark>Asegurate de cambiar la direccion IP-xxxxxxxxx</mark>
+==Asegurate de cambiar la direccion IP-xxxxxxxxx==
 
  
 
