@@ -1,4 +1,4 @@
-# nagios
+# Nagios
 Repositorio con archivos de instalacion,Scripts y Plugins 
 
 # Guia de instalacion 
