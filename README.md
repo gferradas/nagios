@@ -44,7 +44,7 @@ Debemos editar el /usr/local/nagios/etc/nrpe.cfg
 
  **use su editor de confianza**
 
-Buscar la linea de abajo y asegurarse que se vea asi, ==(aca estamos permitiendo que el servidor nagios vea el host remoto)==
+Buscar la linea de abajo y asegurarse que se vea asi, ***(aca estamos permitiendo que el servidor nagios vea el host remoto)***
 
 `allowed_hosts=127.0.0.1,172.18.101.8`
 
