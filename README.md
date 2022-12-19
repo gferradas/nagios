@@ -69,7 +69,7 @@ command[check_netstat]=/usr/local/nagios/libexec/check_netstat.pl -p $ARG1$ $ARG
 ## Paso 1 
 **Confirmamos que podamos ver el cliente nrpe**
 `/usr/local/nagios/libexec/check_nrpe -H (colocar la ip del servidor remoto)`
-==La respuesta debe ser esta==
+<markLa respuesta debe ser esta</mark>
 `NRPE v4.0.3`
 
  
@@ -82,7 +82,7 @@ En este archivo se debe editar el nombre y la direccion ip
 
 Para cambiar todo el nombre de una vez en el fichero con vim escribimos esto
 `:%s/template.cfg/(nombredelhost).cfg /g`
-==Asegurate de cambiar la direccion IP-xxxxxxxxx==
+<mark/Asegurate de cambiar la direccion IP-xxxxxxxxx</mark>
 
  
 
