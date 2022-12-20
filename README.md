@@ -49,13 +49,13 @@ Buscar la linea de abajo y asegurarse que se vea asi, ***(aca estamos permitiend
 `allowed_hosts=127.0.0.1,172.18.101.8`
 
 Ademas eliminar el numeral (si lo tiene) al principio de las lineas de abajo
-command[check_yum]=/usr/local/nagios/libexec/check_yum
+`command[check_yum]=/usr/local/nagios/libexec/check_yum
 command[check_init_service]=sudo /usr/local/nagios/libexec/check_init_service $ARG1$
 command[check_services]=/usr/local/nagios/libexec/check_services -p $ARG1$
 command[check_all_procs]=/usr/local/nagios/libexec/custom_check_procs
 command[check_procs]=/usr/local/nagios/libexec/check_procs $ARG1$
 command[check_open_files]=/usr/local/nagios/libexec/check_open_files.pl $ARG1$
-command[check_netstat]=/usr/local/nagios/libexec/check_netstat.pl -p $ARG1$ $ARG2$
+command[check_netstat]=/usr/local/nagios/libexec/check_netstat.pl -p $ARG1$ $ARG2$`
 
 ## Paso 4
 **Reinicie el servicio y habilitelo** 
