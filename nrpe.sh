@@ -1,5 +1,7 @@
 #!/bin/bash
+pwd=$(pwd)
 #Antes de correr el script asegurate que el archivo nagios-plugins-2.3.3.tar.gz y nrpe-4.0.3.tar.gz esten en /tmp, si no esto va a fallar
+mv $pwd/Plugins /tmp/
 #Instala herramientas de compilacion
 apt install gcc make libssl-dev -y
 #Cambia al directorio 
