@@ -4,6 +4,9 @@ pwd=$(pwd)
 mv $pwd/Plugins/* /tmp/
 #Instala herramientas de compilacion
 apt install gcc make libssl-dev -y
+if [[ $? > 0 ]] then
+    yum install gcc make libssl-dev -y
+fi
 #Cambia al directorio 
 cd /tmp
 #Descomprime el archivo Nagios-plugins
@@ -28,6 +31,9 @@ chown nagios.nagios /usr/local/nagios
 chown -R nagios.nagios /usr/local/nagios/libexec
 #Instalamos Xinetd
 apt install xinetd -y
+if [[ $? > 0 ]] then
+    yum install xinetd -y
+fi
 #Volvemos a /tmp
 cd ..
 #Descomprimimos Nrpe cliente
