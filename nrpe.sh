@@ -4,7 +4,8 @@ pwd=$(pwd)
 mv $pwd/Plugins/* /tmp/
 #Instala herramientas de compilacion
 apt install gcc make libssl-dev -y
-if [[ $? > 0 ]] then
+if [[ $? > 0 ]] 
+then
     yum install gcc make libssl-dev -y
 fi
 #Cambia al directorio 
@@ -31,15 +32,16 @@ chown nagios.nagios /usr/local/nagios
 chown -R nagios.nagios /usr/local/nagios/libexec
 #Instalamos Xinetd
 apt install xinetd -y
-if [[ $? > 0 ]] then
+if [[ $? > 0 ]] 
+then
     yum install xinetd -y
 fi
 #Volvemos a /tmp
 cd ..
 #Descomprimimos Nrpe cliente
-tar xzf nrpe-4.0.3.tar.gz
+tar xzf nrpe-4.1.0.tar.gz
 #Cambiamos de directorio
-cd nrpe-4.0.3
+cd nrpe-4.1.0
 #Aca configuramos, compilamos e instalamos todas la funciones del cliente NRPE
 ./configure
 make all
@@ -54,3 +56,9 @@ systemctl reload xinetd
 systemctl enable nrpe && systemctl start nrpe
 #abrir puerto 5666 en el servidor 
 firewall-cmd --add-port 5666/tcp
+if [[ $? > 0 ]] 
+then
+    ufw allow 5666/tcp
+fi
+
+echo "Todo pronto!!"
